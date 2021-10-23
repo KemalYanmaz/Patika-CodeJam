@@ -8,13 +8,6 @@ Grup üyelerinin portfolyölerinde bulunması düşünülen kavramlar:
 
 Projeleri
 
-Kariyer hedefleri
-
-Blog postları
-
 Çalısanlar : Tansel - Kemal - Muhammed
 
 
-Nodejs ile backend yazabilirim (#Kemal YANMAZ)
-
-![](umldiagram.png)

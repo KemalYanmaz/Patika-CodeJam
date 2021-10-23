@@ -1,0 +1,30 @@
+{
+  "name": "codejam-grouph",
+  "version": "1.0.0",
+  "description": "Patika CodeJam - Group H Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KemalYanmaz/Patika-CodeJam.git"
+  },
+  "author": "Tansel Berkant  - Kemal Yanmaz - Muhammedamin Zakir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KemalYanmaz/Patika-CodeJam/issues"
+  },
+  "homepage": "https://github.com/KemalYanmaz/Patika-CodeJam#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.14",
+    "prettier": "2.4.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12",
+    "slugify": "^1.6.1"
+  }
+}
