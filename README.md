@@ -14,6 +14,6 @@ Blog postları
 
 
 
-Java ile backend yazabilirim (#Kemal YANMAZ)
+Nodejs ile backend yazabilirim (#Kemal YANMAZ)
 
 ![](umldiagram.png)
