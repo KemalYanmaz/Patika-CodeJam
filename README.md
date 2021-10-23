@@ -12,6 +12,7 @@ Kariyer hedefleri
 
 Blog postları
 
+Çalısanlar : Tansel - Kemal - Muhammed
 
 
 Nodejs ile backend yazabilirim (#Kemal YANMAZ)
