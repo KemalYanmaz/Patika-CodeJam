@@ -2,7 +2,7 @@ const User = require('../models/User');
 
 exports.getUsers = async (req, res) => {
   try {
-    const users = await User.find();
+    const users = await User.find().populate('portfolio').populate('blogposts');
     res.status(200).json({
       status: 'success',
       users,

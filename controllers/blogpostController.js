@@ -36,3 +36,19 @@ exports.deletePost = async (req, res) => {
     });
   }
 };
+
+exports.getPost = async (req,res) => {
+  try {
+    await Blogpost.find({user: req.params.id})
+
+    res.status(200).json({
+      status: 'success',
+    })
+    
+  } catch (error) {
+    res.status(400).json({
+      status: 'fail',
+      error
+    })
+  }
+}

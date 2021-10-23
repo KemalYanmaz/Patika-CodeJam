@@ -61,7 +61,7 @@ exports.getDashboardPage = async (req,res) => {
       user
     })    
   } catch (error) {
-    res.statust(400).json({
+    res.status(400).json({
       status: 'fail',
       error
     })
