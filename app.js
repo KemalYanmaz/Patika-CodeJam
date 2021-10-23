@@ -1,10 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const userRouter = require('./routes/userRoute');
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const fileUpload = require('express-fileupload');
+const methodOverride = require('method-override');
+const userRoute = require('./routes/userRoute');
+const pageRoute = require('./routes/pageRoute');
+const projectRoute = require('./routes/projectRoute');
+const blogpostRoute = require('./routes/blogpostRoute');
 
 const app = express();
 
-// Db Connection
+// Global Variable
+global.userIN = null;
+
+// DB CONNECTION
 const dbString =
   'mongodb+srv://grouph:HCPk4wnz7qKbdLOV@cluster0.gf06m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose
@@ -16,19 +26,38 @@ mongoose
     console.log(error);
   });
 
-// Middlewares
+  
+// MIDDLEWARES
 app.use(express.static('public'));
 app.use(express.json()); // For parsing application/json
-app.use(express.urlencoded({extended: true})) // for parsing application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(
+  session({
+    secret: 'codejam-groupH',
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({ mongoUrl: dbString }),
+  })
+);
+app.use(fileUpload());
+app.use(
+  methodOverride('_method', {
+    methods: ['POST', 'GET'],
+  })
+);
 
 
 
-// Routes
-app.get('/', (req,res) => {
-  res.status(200).send('It works')  
-})
+// ROUTES
+app.use('*', (req, res, next) => {
+  (userIN = req.session.userID), next();
+});
+app.use('/', pageRoute);
+app.use('/users', userRoute);
+app.use('/project', projectRoute);
+app.use('/blogposts', blogpostRoute);
 
-app.use('/users', userRouter);
+
 
 
 const port = 3000;

@@ -17,7 +17,7 @@ const BlogpostSchema = new Schema({
     type: String,
   },
   user: {
-    tpye: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
   },
 });
