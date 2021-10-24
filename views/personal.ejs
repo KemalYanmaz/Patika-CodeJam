@@ -13,9 +13,9 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-6 offset-lg-1">
-              <div class="detaisl-box">
+              <div class="detail-box">
                 <div class="heading_box">
-                  <h2 style="font-size: 40px !important; color: white !important;">Tansel Berkant Oflaz<span></span></h2>
+                  <h2 style="font-size: 40px !important; color: white !important;"> <%= user.name %> </h2>
                   <h1 style="font-size: 55px !important; color: gold !important;">Group H</h1>
                 </div>
                 <div class="mt-5">
@@ -30,7 +30,11 @@
             </div>
             <div class="col-lg-5 px-0">
               <div class="img-box">
-                <img src="images/slider-img.png" alt="" />
+                <% if (user.name === "Tansel Berkant Oflaz") { %>
+                  <img src="images/slider-img.png" alt="" />
+                <% } else if(user.name === "Kemal Yanmaz") { %>
+                  <img src="images/slider-img2.png" alt="" />
+                <% }%>         
               </div>
             </div>
           </div>
@@ -44,23 +48,30 @@
           <div class="row">
             <div class="col-lg-6 offset-lg-1">              
                 <div class="heading_box">
-                  <p><%= user.name %></p>
-                  <p><%= user.email %></p>
+                  <h3 class="text-warning"><%= user.name %></h3>
+                  <p class="text-white">E-mail: <%= user.email %></p>
+                  <h5 class="text-warning">Education:</h5>
                   <% for(let i = 0; i < user.education.length; i++) { %>
-                    <p><%= user.education[i] %></p>
+                    <li class="text-white"><%= user.education[i] %></li>
                   <% } %>
+                  <h5 class="text-warning">Specialties</h5>
                   <% for(let i = 0; i < user.specialties.length; i++) { %>
-                    <span><%= user.specialties[i] %></span>
+                    <span class="text-white"> <%= user.specialties[i] %> -</span>
                   <% } %>
+                  <h5 class="text-warning">Languages</h5>
                   <% for(let i = 0; i < user.languages.length; i++) { %>
-                    <p><%= user.languages[i] %></p>
+                    <li class="text-white"><%= user.languages[i] %></li>
                   <% } %>
 
                 </div>                              
             </div>
             <div class="col-lg-5 px-0">
               <div class="img-box">
-                <img src="images/slider-img.png" alt="" />
+                <% if (user.name === "Tansel Berkant Oflaz") { %>
+                  <img src="images/slider-img.png" alt="" />
+                <% } else if(user.name === "Kemal Yanmaz") { %>
+                  <img src="images/slider-img2.png" alt="" />
+                <% }%>                
               </div>
             </div>
           </div>

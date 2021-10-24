@@ -207,7 +207,7 @@ a:focus {
 }
 
 .slider_section .detail-box .heading_box {
-  padding-left: 45px;
+  padding-left: 10px;
   position: relative;
 }
 
@@ -216,7 +216,7 @@ a:focus {
   position: absolute;
   top: -12%;
   left: 0;
-  width: 495px;
+  width: 600px;
   height: 130%;
   border: 1px solid #fed11f;
 }
@@ -242,7 +242,7 @@ a:focus {
   letter-spacing: 14.5px;
 }
 
-.slider_section .detail-box a {
+/* .slider_section .detail-box a {
   font-family: 'Raleway', sans-serif;
   display: inline-block;
   color: #ffffff;
@@ -263,7 +263,7 @@ a:focus {
   -webkit-transform: translate(100%, -50%);
           transform: translate(100%, -50%);
   background-color: #ffffff;
-}
+} */
 
 .slider_section .img-box {
   position: relative;

@@ -13,9 +13,9 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-6 offset-lg-1">
-              <div class="detaisl-box">
+              <div class="detail-box">
                 <div class="heading_box">
-                  <h2 style="font-size: 40px !important; color: white !important;">Tansel Berkant Oflaz<span></span></h2>
+                  <h2 style="font-size: 40px !important; color: white !important;"><%= user.name %></h2>
                   <h1 style="font-size: 55px !important; color: gold !important;">Group H</h1>
                 </div>
                 <div class="mt-5">
@@ -30,7 +30,11 @@
             </div>
             <div class="col-lg-5 px-0">
               <div class="img-box">
-                <img src="/images/slider-img.png" alt="" />
+                <% if (user.name === "Tansel Berkant Oflaz") { %>
+                  <img src="/images/slider-img.png" alt="" />
+                <% } else if(user.name === "Kemal Yanmaz") { %>
+                  <img src="/images/slider-img2.png" alt="" />
+                <% }%>         
               </div>
             </div>
           </div>
@@ -44,18 +48,24 @@
             <div class="row">
               <div class="col-lg-6 offset-lg-1">              
                   <div class="heading_box">
-                    <p><%= user.projects[i].name %></p>                  
+                    <h5 class="text-warning"><%= user.projects[i].name %></h5>
+                    <p class="text-white mt-3">Technologies That I Used: </p>                  
                     <% for(let x = 0; x < user.projects[i].technologies.length; x++) { %>
-                      <span><%= user.projects[i].technologies[x] %> - </span>
+                      <span class="text-white">   <%= user.projects[i].technologies[x] %> -   </span>
                     <% } %>
-                    <p class="mt-2"><%= user.projects[i].features %></p>
-                    <p><%= user.projects[i].gitlink %></p>
+                    <p class="text-white mt-4">Description: </p>                  
+                    <p class="mt-2 text-white"><%= user.projects[i].features %></p>
+                    <a class="btn btn-sm btn-outline-warning" href="<%= user.projects[i].gitlink %>">Proje Link</a>
   
                   </div>                              
               </div>
               <div class="col-lg-5 px-0">
                 <div class="img-box">
-                  <img src="/images/slider-img.png" alt="" />
+                  <% if (user.name === "Tansel Berkant Oflaz") { %>
+                    <img src="/images/slider-img.png" alt="" />
+                  <% } else if(user.name === "Kemal Yanmaz") { %>
+                    <img src="/images/slider-img2.png" alt="" />
+                  <% }%>         
                 </div>
               </div>
             </div>

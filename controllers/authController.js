@@ -109,7 +109,7 @@ exports.addUserPicture = async (req, res) => {
 
     profilePhoto.mv(uploadPath, async () => {
       await User.findByIdAndUpdate(myUserId,{        
-        ...req.body,
+        
         image: '/uploads/' + myRandom + profilePhoto.name,
       });      
       res.status(200).json({
