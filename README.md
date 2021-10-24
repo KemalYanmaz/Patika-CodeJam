@@ -1,13 +1,7 @@
-## gCodeJam Portfolyo Blog (Grup H)
+## CodeJam Portfolyo Blog (Grup H)
 
-Site gruba ait bir blog sitesi olacak ve içerisinde grup üyelerinin portfolyöleri bulunacak
+Bu Wep Projesi Kodluyoruz Codejam'e katılan grubunun CV - Blog yazıları - Projelerini sergilemeleri için olusturulmuştur
 
-Grup üyelerinin portfolyölerinde bulunması düşünülen kavramlar:
-
-Özgeçmiş(Kısa Özet, Eğitim, Yetenekler)
-
-Projeleri
-
-Çalısanlar : Tansel - Kemal - Muhammed
+Projede Çalısanlar : Tansel Berkant Oflaz - Kemal Yanmaz - Muhammedamin Zakir
 
 
