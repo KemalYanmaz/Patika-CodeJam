@@ -6,5 +6,7 @@ const pageController = require('../controllers/pageController');
 
 router.route('/').get(pageController.getUsers);
 router.route('/:slug').get(pageController.getOneUser);
+router.route('/projects/:slug').get(pageController.getUserProjects)
+router.route('/posts/:slug').get(pageController.getUserPosts);
 
 module.exports = router;

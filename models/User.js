@@ -44,16 +44,42 @@ const UserSchema = new Schema({
   image : {
     type : String
   },
-  portfolio : [
+  projects : [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Project'
+      name : {
+        type: String,
+        required: true
+      },
+      technologies : [
+        {
+          type: String
+        }
+      ],
+      features : {
+        type: String,
+        required: true
+      },
+      gitlink: {
+        type: String
+      }
     }
   ],
-  blogposts : [
+  posts : [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Blogpost'
+      name : {
+        type: String,
+        required: true
+      },
+      content : {
+        type: String,
+        required: true
+      },
+      postlink : {
+        type: String
+      },
+      subject : {
+        type: String
+      }
     }
   ]
 });
@@ -82,3 +108,4 @@ UserSchema.pre('save', function (next) {
 
 const User = mongoose.model('User', UserSchema);
 module.exports = User;
+

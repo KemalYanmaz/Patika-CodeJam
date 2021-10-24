@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const ejs = require('ejs');
 const fileUpload = require('express-fileupload');
 const methodOverride = require('method-override');
 const userRoute = require('./routes/userRoute');
@@ -14,9 +15,10 @@ const app = express();
 // Global Variable
 global.userIN = null;
 
+
 // DB CONNECTION
 const dbString =
-  'mongodb+srv://grouph:HCPk4wnz7qKbdLOV@cluster0.gf06m.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+  'mongodb+srv://grouph:HCPk4wnz7qKbdLOV@cluster0.gf06m.mongodb.net/Codejam-GroupH?retryWrites=true&w=majority';
 mongoose
   .connect(dbString)
   .then(() => {
@@ -25,6 +27,10 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
+
+
+// TEMPLATE ENGINE
+app.set('view engine', 'ejs');
 
   
 // MIDDLEWARES

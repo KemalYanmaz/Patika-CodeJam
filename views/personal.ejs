@@ -1,0 +1,97 @@
+<%- include ('partials/_header.ejs') %>
+<!-- slider section -->
+<div class="slider_section">
+  
+
+  <div
+    id="carouselExampleControls"
+    class="carousel slide"
+    data-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 offset-lg-1">
+              <div class="detaisl-box">
+                <div class="heading_box">
+                  <h2 style="font-size: 40px !important; color: white !important;">Tansel Berkant Oflaz<span></span></h2>
+                  <h1 style="font-size: 55px !important; color: gold !important;">Group H</h1>
+                </div>
+                <div class="mt-5">
+                  <a href="/projects/<%= user.slug %>" class="m-3" style="color: white !important;">
+                    My Projects
+                  </a>
+                  <a href="/posts/<%= user.slug %>" class="m-3" style="color: white !important;">
+                    My Posts
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 px-0">
+              <div class="img-box">
+                <img src="images/slider-img.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+      <div class="carousel-item ">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 offset-lg-1">              
+                <div class="heading_box">
+                  <p><%= user.name %></p>
+                  <p><%= user.email %></p>
+                  <% for(let i = 0; i < user.education.length; i++) { %>
+                    <p><%= user.education[i] %></p>
+                  <% } %>
+                  <% for(let i = 0; i < user.specialties.length; i++) { %>
+                    <span><%= user.specialties[i] %></span>
+                  <% } %>
+                  <% for(let i = 0; i < user.languages.length; i++) { %>
+                    <p><%= user.languages[i] %></p>
+                  <% } %>
+
+                </div>                              
+            </div>
+            <div class="col-lg-5 px-0">
+              <div class="img-box">
+                <img src="images/slider-img.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+  <div class="slider_btn-container">
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleControls"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleControls"
+      role="button"
+      data-slide="next"
+    >
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<!-- end slider section -->
+</div>
+<!-- end hero area -->
+
+<%- include ('partials/_footer.ejs') %>
